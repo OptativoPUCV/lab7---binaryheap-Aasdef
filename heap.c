@@ -58,7 +58,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
-  void*max=pq->heapArray[0].data;
+  //void*max=pq->heapArray[0].data;
   pq->heapArray[0]=pq->heapArray[pq->size-1];
   pq->size--;
   int i=0;
@@ -76,7 +76,7 @@ void heap_pop(Heap* pq){
   if (larg!=i){
     swap(&(pq->heapArray[i]), &(pq->heapArray[larg]));
   }
-  
+
 }
 
 Heap* createHeap(){

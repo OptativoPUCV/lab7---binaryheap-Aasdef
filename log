@@ -66,3 +66,9 @@ heap.c:61:8: error: unused variable ‘max’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 ebaf1e7
+Thu 12 Oct 2023 11:57:23 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|0
+total_score: 70/70
+f7a84d5
