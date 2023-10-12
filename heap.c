@@ -39,7 +39,7 @@ void swap(heapElem* x, heapElem* y) {
 void heap_push(Heap* pq, void* data, int priority){
   heapElem nuevo;
   nuevo.data=data;
-  nuevo.priority=priority;
+  nuevo->priority=priority;
 
   if(pq->size==pq->capac){//asegurarse del espacio
     pq->capac*=2;
@@ -50,7 +50,7 @@ void heap_push(Heap* pq, void* data, int priority){
   pq->heapArray[i]=nuevo;
   pq->size++;
 
-  while(i!=0 && pq->heapArray[i].priority < pq->heapArray[i].priority){
+  while(i != 0 && pq->heapArray[i].priority > pq->heapArray[parent(i)].priority){
     swap(&(pq->heapArray[i]), &(pq->heapArray[(i-1)/2]));
     i=parent(i);
   }   

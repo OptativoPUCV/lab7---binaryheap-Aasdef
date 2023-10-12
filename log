@@ -27,3 +27,13 @@ heap.c:53:43: error: self-comparison always evaluates to false [-Werror=tautolog
 cc1: all warnings being treated as errors
 Compilation failed
 4e5b325
+Thu 12 Oct 2023 11:36:52 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:42:8: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   42 |   nuevo->priority=priority;
+      |        ^~
+Compilation failed
+bf9c297
