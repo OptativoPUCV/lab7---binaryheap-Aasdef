@@ -25,10 +25,36 @@ void* heap_top(Heap* pq){
 }
 
 
-
-void heap_push(Heap* pq, void* data, int priority){
-
+//Función para obtener el índice del padre
+int parent(int i) {
+    return (i - 1) / 2;
 }
+
+// Función para intercambiar dos elementos
+void swap(heapElem* x, heapElem* y) {
+    heapElem temp = *x;
+    *x = *y;
+    *y = temp;
+}
+void heap_push(Heap* pq, void* data, int priority){
+  heapElem nuevo;
+  nuevo.data=data;
+  nuevo.priority=priority;
+
+  if(pq->size==pq->capac){//asegurarse del espacio
+    pq->capac*=2;
+    pq->heapArray=realloc(pq->heapArray, pq->capac*sizeof(heapElem));
+  }
+
+  int i=pq->size;
+  pq->heapArray[i]=nuevo;
+  pq->size++;
+
+  while(i!=0 && pq->heapArray[i].priority < pq->heapArray[i].priority){
+    swap(&(pq->heapArray[i]), &(pq->heapArray[(i-1)/2]));
+    i=parent(i);
+  }   
+}  
 
 
 void heap_pop(Heap* pq){

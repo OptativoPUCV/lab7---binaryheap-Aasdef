@@ -16,3 +16,14 @@ Thu 12 Oct 2023 11:03:46 PM UTC:
  tests:  2|2
 total_score: 20/70
 eb42ae4
+Thu 12 Oct 2023 11:35:54 PM UTC: 
+ heap.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:53:43: error: self-comparison always evaluates to false [-Werror=tautological-compare]
+   53 |   while(i!=0 && pq->heapArray[i].priority < pq->heapArray[i].priority){
+      |                                           ^
+cc1: all warnings being treated as errors
+Compilation failed
+4e5b325
